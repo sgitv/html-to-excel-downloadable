@@ -1,3 +1,7 @@
+<?php 
+require_once 'vendor/autoload.php';
+$faker = Faker\Factory::create();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,25 +11,27 @@
 <body class="container">
 <table id="tbl1" border="1" >
 <tr>
-    <td>Product</td>
-    <td>Price</td>
-    <td>Available</td>
-    <td>Count</td>
-    </tr>
-<tr>
-    <td>Bred</td>
-    <td>7</td>
-    <td>8</td>
-    <td>9</td>
+    <th>employee Id</th>
+    <th>employee name</th>
+    <th>phone No.</th>
+    <th>email</th>
+    <th>address</th>
+    <th>date of joined</th>
 </tr>
+<?php foreach (range(1,20) as $key): ?>
 <tr>
-    <td>Butter</td>
-    <td>14</td>
-    <td>15</td>
-    <td >16</td>
+    <td><?php echo $faker ->randomNumber($nbDigits = NULL) ?></td>
+    <td><?php echo $faker ->name ?></td>
+    <td><?php echo $faker ->phoneNumber ?></td>
+    <td><?php echo $faker ->email ?></td>
+    <td><?php echo $faker ->address ?></td>
+    <td><?php echo $faker ->date ?> </td>
 </tr>
+
+<?php endforeach ?>
 </table>
-<button onclick="downloadAsExcel()">Export to Excel</button>
-<script src="bower_components/bootstrap/dist/js/download.js"></script>
+
+<button onclick="downloadAsExcel()">Download As Excel</button>
+<script src="download.js"></script>
 </body>
 </html>
