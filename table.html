@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>faker</title>
+	<link href="styles.css" rel="stylesheet" >
+</head>
+<body>
+<table id="tbl1">
+<tr>
+    <td>Product</td>
+    <td>Price</td>
+    <td>Available</td>
+    <td>Count</td>
+    </tr>
+<tr>
+    <td>Bred</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+</tr>
+<tr>
+    <td>Butter</td>
+    <td>14</td>
+    <td>15</td>
+    <td >16</td>
+</tr>
+</table>
+<button onclick="downloadAsExcel()">Export to Excel</button>
+<script >
+function downloadAsExcel() 
+{
+    var tab_text = "<table><tr>";
+    var textRange; 
+    var j = 0;
+    tab = document.getElementById('tbl1');
+    for (j = 0 ; j < tab.rows.length ; j++) 
+    {
+        tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
+  
+    }
+    tab_text = tab_text + "</table>";
+    var excel = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+	return (excel);
+}
+</script>
+</body>
+</html>
