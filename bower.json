@@ -1,0 +1,21 @@
+{
+  "name": "fakertrial",
+  "homepage": "https://github.com/sid1511996/html-to-excel-downloadable",
+  "authors": [
+    "sid1511996 <siddartha1511996@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
